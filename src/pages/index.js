@@ -1,12 +1,14 @@
 import RootLayout from "../../components/Layouts/RootLayout";
+import { BsMotherboard } from "react-icons/bs";
 
 const HomePage = () => {
   return (
     <>
-      <div className="pt-5 text-2xl font-bold text-center">
+      {/* Featured Products */}
+      <div className="pt-8 text-4xl font-bold text-center">
         Featured Products
       </div>
-      <div class="flex flex-wrap items-center justify-center">
+      <div class="flex pt-5 flex-wrap items-center justify-center">
         <div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
           <svg
             class="absolute bottom-0 left-0 mb-8"
@@ -48,13 +50,19 @@ const HomePage = () => {
             />
           </div>
           <div class="relative text-white px-6 pb-6 mt-6">
-            <span class="block opacity-75 -mb-1">Indoor</span>
-            <div class="flex justify-between">
-              <span class="block font-semibold text-xl">Peace Lily</span>
-              <span class="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">
-                $36.00
+            <span class="block opacity-75 -mb-1">Ram</span>
+            <div class="">
+              <span class="font-semibold text-xl">
+                Peace Lily Peace Lily Peace Lil
               </span>
             </div>
+            <div class="flex justify-between pt-2">
+              <span class="text-sm items-center">⭐⭐⭐⭐⭐ (50)</span>
+              <span class="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">
+                $45.00
+              </span>
+            </div>
+            <span class="block opacity-75 -mb-1 font-medium">In Stock</span>
           </div>
         </div>
         <div class="flex-shrink-0 m-6 relative overflow-hidden bg-teal-500 rounded-lg max-w-xs shadow-lg">
@@ -98,13 +106,19 @@ const HomePage = () => {
             />
           </div>
           <div class="relative text-white px-6 pb-6 mt-6">
-            <span class="block opacity-75 -mb-1">Outdoor</span>
-            <div class="flex justify-between">
-              <span class="block font-semibold text-xl">Monstera</span>
+            <span class="block opacity-75 -mb-1">Ram</span>
+            <div class="">
+              <span class="font-semibold text-xl">
+                Peace Lily Peace Lily Peace Lil
+              </span>
+            </div>
+            <div class="flex justify-between pt-2">
+              <span class="text-sm items-center">⭐⭐⭐⭐⭐ (50)</span>
               <span class="block bg-white rounded-full text-teal-500 text-xs font-bold px-3 py-2 leading-none flex items-center">
                 $45.00
               </span>
             </div>
+            <span class="block opacity-75 -mb-1 font-medium">In Stock</span>
           </div>
         </div>
         <div class="flex-shrink-0 m-6 relative overflow-hidden bg-purple-500 rounded-lg max-w-xs shadow-lg">
@@ -148,16 +162,178 @@ const HomePage = () => {
             />
           </div>
           <div class="relative text-white px-6 pb-6 mt-6">
-            <span class="block opacity-75 -mb-1">Outdoor</span>
-            <div class="flex justify-between">
-              <span class="block font-semibold text-xl">Oak Tree</span>
-              <span class="block bg-white rounded-full text-purple-500 text-xs font-bold px-3 py-2 leading-none flex items-center">
-                $68.50
+            <span class="block opacity-75 -mb-1">Ram</span>
+            <div class="">
+              <span class="font-semibold text-xl">
+                Peace Lily Peace Lily Peace Lil
               </span>
             </div>
+            <div class="flex justify-between pt-2">
+              <span class="text-sm items-center">⭐⭐⭐⭐⭐ (50)</span>
+              <span class="block bg-white rounded-full text-purple-500 text-xs font-bold px-3 py-2 leading-none flex items-center">
+                $45.00
+              </span>
+            </div>
+            <span class="block opacity-75 -mb-1 font-medium">In Stock</span>
           </div>
         </div>
       </div>
+      {/* Featured Categories */}
+      <div className="pt-24 text-4xl font-bold text-center">
+        Featured Categories
+      </div>
+      <ul className="list-none max-w-screen-xl mx-auto grid items-center gap-6  md:grid-cols-2 lg:grid-cols-3 ">
+        <li>
+          <ul
+            className="list-none mt-5 space-y-6 border"
+            style={{ zIndex: 9999 }}
+          >
+            <li className="group">
+              <a
+                href={"javascript:void(0)"}
+                className="flex gap-3 items-center"
+              >
+                <div className="w-12 h-12 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center duration-150 group-hover:bg-indigo-600 group-hover:text-white md:w-14 md:h-14">
+                  <BsMotherboard size={32} />
+                </div>
+                <div>
+                  <span className="text-gray-800 duration-200 group-hover:text-indigo-600 text-sm font-medium md:text-base">
+                    Motherboard
+                  </span>
+                  <p className="text-sm text-gray-600 group-hover:text-gray-800 mt-1">
+                    Duis aute irure dolor in reprehenderit
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul
+            className="list-none mt-5 space-y-6 border"
+            style={{ zIndex: 9999 }}
+          >
+            <li className="group">
+              <a
+                href={"javascript:void(0)"}
+                className="flex gap-3 items-center"
+              >
+                <div className="w-12 h-12 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center duration-150 group-hover:bg-indigo-600 group-hover:text-white md:w-14 md:h-14">
+                  <BsMotherboard size={32} />
+                </div>
+                <div>
+                  <span className="text-gray-800 duration-200 group-hover:text-indigo-600 text-sm font-medium md:text-base">
+                    Motherboard
+                  </span>
+                  <p className="text-sm text-gray-600 group-hover:text-gray-800 mt-1">
+                    Duis aute irure dolor in reprehenderit
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul
+            className="list-none mt-5 space-y-6 border"
+            style={{ zIndex: 9999 }}
+          >
+            <li className="group">
+              <a
+                href={"javascript:void(0)"}
+                className="flex gap-3 items-center"
+              >
+                <div className="w-12 h-12 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center duration-150 group-hover:bg-indigo-600 group-hover:text-white md:w-14 md:h-14">
+                  <BsMotherboard size={32} />
+                </div>
+                <div>
+                  <span className="text-gray-800 duration-200 group-hover:text-indigo-600 text-sm font-medium md:text-base">
+                    Motherboard
+                  </span>
+                  <p className="text-sm text-gray-600 group-hover:text-gray-800 mt-1">
+                    Duis aute irure dolor in reprehenderit
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul
+            className="list-none mt-5 space-y-6 border"
+            style={{ zIndex: 9999 }}
+          >
+            <li className="group">
+              <a
+                href={"javascript:void(0)"}
+                className="flex gap-3 items-center"
+              >
+                <div className="w-12 h-12 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center duration-150 group-hover:bg-indigo-600 group-hover:text-white md:w-14 md:h-14">
+                  <BsMotherboard size={32} />
+                </div>
+                <div>
+                  <span className="text-gray-800 duration-200 group-hover:text-indigo-600 text-sm font-medium md:text-base">
+                    Motherboard
+                  </span>
+                  <p className="text-sm text-gray-600 group-hover:text-gray-800 mt-1">
+                    Duis aute irure dolor in reprehenderit
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul
+            className="list-none mt-5 space-y-6 border"
+            style={{ zIndex: 9999 }}
+          >
+            <li className="group">
+              <a
+                href={"javascript:void(0)"}
+                className="flex gap-3 items-center"
+              >
+                <div className="w-12 h-12 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center duration-150 group-hover:bg-indigo-600 group-hover:text-white md:w-14 md:h-14">
+                  <BsMotherboard size={32} />
+                </div>
+                <div>
+                  <span className="text-gray-800 duration-200 group-hover:text-indigo-600 text-sm font-medium md:text-base">
+                    Motherboard
+                  </span>
+                  <p className="text-sm text-gray-600 group-hover:text-gray-800 mt-1">
+                    Duis aute irure dolor in reprehenderit
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul
+            className="list-none mt-5 space-y-6 border"
+            style={{ zIndex: 9999 }}
+          >
+            <li className="group">
+              <a
+                href={"javascript:void(0)"}
+                className="flex gap-3 items-center"
+              >
+                <div className="w-12 h-12 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center duration-150 group-hover:bg-indigo-600 group-hover:text-white md:w-14 md:h-14">
+                  <BsMotherboard size={32} />
+                </div>
+                <div>
+                  <span className="text-gray-800 duration-200 group-hover:text-indigo-600 text-sm font-medium md:text-base">
+                    Motherboard
+                  </span>
+                  <p className="text-sm text-gray-600 group-hover:text-gray-800 mt-1">
+                    Duis aute irure dolor in reprehenderit
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </>
   );
 };
