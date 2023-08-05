@@ -51,9 +51,12 @@ const HomePage = () => {
           </div>
           <div class="relative text-white px-6 pb-6 mt-6">
             <span class="block opacity-75 -mb-1">Ram</span>
-            <div class="">
-              <span class="font-semibold text-xl">
-                Peace Lily Peace Lily Peace Lil
+            <div className="max-w-xs">
+              <span
+                title="Peace Lily Peace LilyPeace LilyPeace Lily"
+                className="block overflow-ellipsis overflow-hidden whitespace-nowrap link link-underline font-semibold text-xl"
+              >
+                Peace Lily Peace LilyPeace LilyPeace Lily
               </span>
             </div>
             <div class="flex justify-between pt-2">
