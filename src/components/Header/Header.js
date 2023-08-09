@@ -4,6 +4,7 @@ import { CgSmartphoneRam } from "react-icons/cg";
 import { ImPower } from "react-icons/im";
 import { PiMonitor } from "react-icons/pi";
 import { MdOutlineMiscellaneousServices, MdStorage } from "react-icons/md";
+import Link from "next/link";
 
 const dropdownNavs = [
   {
@@ -103,14 +104,14 @@ const Header = () => {
       >
         <div className="items-center gap-x-14 px-4 max-w-screen-xl mx-auto md:flex md:px-8">
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <a href="javascript:void(0)">
+            <Link href="/">
               <img
                 src="https://www.floatui.com/logo.svg"
                 width={120}
                 height={50}
                 alt="Float UI logo"
               />
-            </a>
+            </Link>
             <div className="md:hidden">
               <button
                 className="text-gray-500 hover:text-gray-800"
@@ -246,12 +247,11 @@ const Header = () => {
               })}
               <div className="flex-1 items-center justify-end gap-x-6 space-y-3 md:flex md:space-y-0">
                 <li>
-                  <a
-                    href="javascript:void(0)"
-                    className="inline-block text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                  >
-                    PC Builder
-                  </a>
+                  <Link href="/pc-builder">
+                    <button className="border-none text-white bg-gradient-to-br from-pink-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                      PC Builder
+                    </button>
+                  </Link>
                 </li>
                 <li>
                   <a
