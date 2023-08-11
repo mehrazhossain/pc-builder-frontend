@@ -71,9 +71,12 @@ const HomePage = ({ products }) => {
       </Divider>
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
         {featuredCategories.map((category) => (
-          <Col className="gutter-row" xs={12} md={8} span={6}>
-            <li className="group list-none">
-              <Link href={category.url} className="flex gap-3 items-center">
+          <Col className="gutter-row" xs={12} md={6} span={6}>
+            <li className="group list-none flex items-center justify-center mb-4">
+              <Link
+                href={category.url}
+                className="flex flex-col items-center justify-center text-center"
+              >
                 <div className="w-12 h-12 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center duration-150 group-hover:bg-indigo-600 group-hover:text-white md:w-14 md:h-14">
                   {category.icon}
                 </div>
@@ -81,9 +84,6 @@ const HomePage = ({ products }) => {
                   <span className="text-gray-800 duration-200 group-hover:text-indigo-600 text-sm font-medium md:text-base">
                     {category.name}
                   </span>
-                  <p className="text-sm text-gray-600 group-hover:text-gray-800 mt-1">
-                    Duis aute irure dolor in reprehenderit
-                  </p>
                 </div>
               </Link>
             </li>

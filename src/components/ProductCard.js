@@ -44,7 +44,7 @@ const ProductCard = ({ product }) => {
           />
         </div>
         <div class="relative text-white px-6 pb-6 mt-6">
-          <span class="block opacity-75 -mb-1">Ram</span>
+          <span class="block opacity-75 -mb-1">{product.type}</span>
           <div class="">
             <span className="font-semibold text-xl block overflow-hidden whitespace-nowrap link link-underline font-semibold old truncate w-50">
               {product.productName}
