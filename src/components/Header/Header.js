@@ -1,69 +1,55 @@
 import { useEffect, useState } from "react";
-import { BsCpu, BsMotherboard } from "react-icons/bs";
 import { CgSmartphoneRam } from "react-icons/cg";
-import { ImPower } from "react-icons/im";
+import { BsCpu, BsMotherboard } from "react-icons/bs";
 import { PiMonitor } from "react-icons/pi";
-import { MdOutlineMiscellaneousServices, MdStorage } from "react-icons/md";
+import { ImPower } from "react-icons/im";
+import { MdStorage } from "react-icons/md";
+import { RxMixerHorizontal } from "react-icons/rx";
+import { Col, Row } from "antd";
 import Link from "next/link";
 
 const dropdownNavs = [
   {
-    navs: [
-      {
-        title: "CPU / Processor",
-        desc: "Duis aute irure dolor in reprehenderit",
-        path: "javascript:void(0)",
-        icon: <BsCpu size={32} />,
-      },
-      {
-        title: "Motherboard",
-        desc: "Duis aute irure dolor in reprehenderit",
-        path: "javascript:void(0)",
-        icon: <BsMotherboard size={32} />,
-      },
-    ],
+    id: 1,
+    icon: <BsCpu size={32} />,
+    name: "CPU / Processor",
+    url: "/category/cpu",
   },
   {
-    navs: [
-      {
-        title: "RAM",
-        desc: "Duis aute irure dolor in reprehenderit",
-        path: "javascript:void(0)",
-        icon: <CgSmartphoneRam size={32} />,
-      },
-      {
-        title: "Power Supply Unit",
-        desc: "Duis aute irure dolor in reprehenderit",
-        path: "javascript:void(0)",
-        icon: <ImPower size={32} />,
-      },
-    ],
+    id: 2,
+    icon: <BsMotherboard size={32} />,
+    name: "Motherboard",
+    url: "/category/motherboard",
   },
   {
-    navs: [
-      {
-        title: "Monitor",
-        desc: "Duis aute irure dolor in reprehenderit",
-        path: "javascript:void(0)",
-        icon: <PiMonitor size={32} />,
-      },
-      {
-        title: "Storage Device",
-        desc: "Duis aute irure dolor in reprehenderit",
-        path: "javascript:void(0)",
-        icon: <MdStorage size={32} />,
-      },
-    ],
+    id: 3,
+    icon: <CgSmartphoneRam size={32} />,
+    name: "RAM",
+    url: "/category/ram",
   },
   {
-    navs: [
-      {
-        title: "Others",
-        desc: "Duis aute irure dolor in reprehenderit",
-        path: "javascript:void(0)",
-        icon: <MdOutlineMiscellaneousServices size={32} />,
-      },
-    ],
+    id: 4,
+    icon: <PiMonitor size={32} />,
+    name: "Monitor",
+    url: "/category/monitor",
+  },
+  {
+    id: 5,
+    icon: <ImPower size={32} />,
+    name: "Power Supply",
+    url: "/category/power-supply",
+  },
+  {
+    id: 6,
+    icon: <MdStorage size={32} />,
+    name: "Storage Device",
+    url: "/category/storage",
+  },
+  {
+    id: 7,
+    icon: <RxMixerHorizontal size={32} />,
+    name: "Others",
+    url: "/category/others",
   },
 ];
 
@@ -74,17 +60,13 @@ const Header = () => {
     idx: null,
   });
 
-  // Replace javascript:void(0) paths with your paths
   const navigation = [
     {
       title: "Categories",
       path: "javascript:void(0)",
       isDrapdown: true,
-      navs: dropdownNavs,
     },
-    { title: "Integrations", path: "javascript:void(0)", isDrapdown: false },
-    { title: "Customers", path: "javascript:void(0)", isDrapdown: false },
-    { title: "Pricing", path: "javascript:void(0)", isDrapdown: false },
+    { title: "Products", path: "/product", isDrapdown: false },
   ];
 
   useEffect(() => {
@@ -196,48 +178,44 @@ const Header = () => {
                         )}
                       </p>
                     ) : (
-                      <a
-                        href={item.path}
+                      <Link
                         className="block text-gray-700 hover:text-indigo-600"
+                        href={item.path}
                       >
                         {item.title}
-                      </a>
+                      </Link>
                     )}
                     {item.isDrapdown &&
                     drapdownState.idx == idx &&
                     drapdownState.isActive ? (
-                      <div className="mt-6 inset-x-0 top-20 w-full md:absolute md:border-y md:shadow-md md:mt-0 bg-white z-50">
-                        <ul className="list-none max-w-screen-xl mx-auto grid items-center gap-6 md:p-8 md:grid-cols-2 lg:grid-cols-3">
-                          {item?.navs.map((dropdownItem, idx) => (
-                            <li key={idx}>
-                              <ul
-                                className="list-none mt-5 space-y-6"
-                                style={{ zIndex: 9999 }}
-                              >
-                                {dropdownItem.navs.map((navItem, idx) => (
-                                  <li key={idx} className="group">
-                                    <a
-                                      href={navItem.path}
-                                      className="flex gap-3 items-center"
-                                    >
-                                      <div className="w-12 h-12 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center duration-150 group-hover:bg-indigo-600 group-hover:text-white md:w-14 md:h-14">
-                                        {navItem.icon}
-                                      </div>
-                                      <div>
-                                        <span className="text-gray-800 duration-200 group-hover:text-indigo-600 text-sm font-medium md:text-base">
-                                          {navItem.title}
-                                        </span>
-                                        <p className="text-sm text-gray-600 group-hover:text-gray-800 mt-1">
-                                          {navItem.desc}
-                                        </p>
-                                      </div>
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </li>
+                      <div className="mt-6 inset-x-0 top-20 w-1/2 ml-20 md:absolute md:border-y md:shadow-md md:mt-0 bg-white z-50 p-5">
+                        <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+                          {dropdownNavs.map((dropdownItem) => (
+                            <Col
+                              key={idx}
+                              className="gutter-row mt-5"
+                              xs={12}
+                              md={6}
+                              span={6}
+                            >
+                              <li className="group list-none flex items-center justify-center">
+                                <Link
+                                  href={dropdownItem.url}
+                                  className="flex flex-col items-center justify-center text-center"
+                                >
+                                  <div className="w-12 h-12 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center duration-150 group-hover:bg-indigo-600 group-hover:text-white md:w-14 md:h-14">
+                                    {dropdownItem.icon}
+                                  </div>
+                                  <div>
+                                    <span className="text-gray-800 duration-200 group-hover:text-indigo-600 text-sm font-medium md:text-base">
+                                      {dropdownItem.name}
+                                    </span>
+                                  </div>
+                                </Link>
+                              </li>
+                            </Col>
                           ))}
-                        </ul>
+                        </Row>
                       </div>
                     ) : (
                       ""
