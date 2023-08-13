@@ -1,15 +1,10 @@
 import React from "react";
-import RootLayout from "../../../components/Layouts/RootLayout";
 import { GrPowerReset } from "react-icons/gr";
 import { BsMotherboard } from "react-icons/bs";
 import { Col, Row } from "antd";
+import RootLayout from "@/components/Layouts/RootLayout";
 
-const PcBuilderPage = () => {
-  const containerStyle = {
-    border: "2px solid black",
-    padding: "10px", // Optional: Add some padding to create space between the border and content
-  };
-
+const PcBuilderPage = ({ products }) => {
   return (
     <>
       <div className="flex justify-between items-center px-10 mt-3">
@@ -35,20 +30,6 @@ const PcBuilderPage = () => {
           </span>
         </div>
       </div>
-
-      {/* <div className="flex justify-between items-center px-10 mt-3">
-        <div>
-          <button class=" px-6 py-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
-            <BsMotherboard size={32} /> Motherboard
-          </button>
-        </div>
-
-        <div className="text-center border-b border-gray-700">
-          <button class=" px-6 py-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
-            Select
-          </button>
-        </div>
-      </div> */}
       <div>
         <Row>
           <Col

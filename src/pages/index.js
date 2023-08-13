@@ -6,8 +6,8 @@ import { MdStorage } from "react-icons/md";
 import { RxMixerHorizontal } from "react-icons/rx";
 import { Col, Divider, Row } from "antd";
 import ProductCard from "@/components/ProductCard";
-import RootLayout from "@/components/Layouts/RootLayout";
 import Link from "next/link";
+import RootLayout from "@/components/Layouts/RootLayout";
 
 const featuredCategories = [
   {

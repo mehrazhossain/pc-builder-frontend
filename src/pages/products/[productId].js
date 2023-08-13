@@ -1,5 +1,5 @@
+import RootLayout from "@/components/Layouts/RootLayout";
 import { useRouter } from "next/router";
-import RootLayout from "../../../components/Layouts/RootLayout";
 
 const ProductDetail = () => {
   const router = useRouter();
