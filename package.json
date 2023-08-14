@@ -17,7 +17,7 @@
     "lodash": "^4.17.21",
     "mongodb": "^5.7.0",
     "next": "13.4.12",
-    "next-auth": "^4.22.4",
+    "next-auth": "^4.23.0",
     "nextjs-progressbar": "^0.0.16",
     "postcss": "8.4.27",
     "react": "18.2.0",

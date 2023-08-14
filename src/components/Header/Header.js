@@ -7,6 +7,9 @@ import { MdStorage } from "react-icons/md";
 import { RxMixerHorizontal } from "react-icons/rx";
 import { Col, Row } from "antd";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 
 const dropdownNavs = [
   {
@@ -54,6 +57,12 @@ const dropdownNavs = [
 ];
 
 const Header = () => {
+  const router = useRouter();
+  const { data: session } = useSession();
+  const handleNavigate = (url) => {
+    router.push(url);
+  };
+
   const [state, setState] = useState(false);
   const [drapdownState, setDrapdownState] = useState({
     isActive: false,
@@ -232,14 +241,26 @@ const Header = () => {
                     PC Builder
                   </Link>
                 </li>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    className="inline-block text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                  >
-                    Log in
-                  </a>
-                </li>
+                {session?.user?.name ? (
+                  <li>
+                    <Link
+                      onClick={() => signOut()}
+                      href="javascript:void(0)"
+                      className="inline-block text-white bg-gradient-to-br from-gray-600 to-gray-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                    >
+                      Logout
+                    </Link>
+                  </li>
+                ) : (
+                  <li>
+                    <Link
+                      href="/login"
+                      className="inline-block text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                    >
+                      Log in
+                    </Link>
+                  </li>
+                )}
               </div>
             </ul>
           </div>
