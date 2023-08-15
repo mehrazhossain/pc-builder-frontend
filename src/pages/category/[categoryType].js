@@ -1,5 +1,5 @@
-import ProductCard from "@/components/ProductCard";
 import RootLayout from "@/components/Layouts/RootLayout";
+import ProductCard from "@/components/ProductCard";
 import { Divider, Row } from "antd";
 
 const ProductCategoryPage = ({ products }) => {

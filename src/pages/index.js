@@ -61,7 +61,7 @@ const HomePage = ({ products }) => {
         Featured Products
       </Divider>
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-        {products?.slice(0, 8)?.map((product) => (
+        {products?.slice(0, 6)?.map((product) => (
           <ProductCard key={product._id} product={product} />
         ))}
       </Row>

@@ -10,7 +10,11 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <SessionProvider session={pageProps.session}>
-        <NextNProgress color="#cd2f82" height={4} />
+        <NextNProgress
+          color="#2563eb"
+          height={4}
+          options={{ showSpinner: false }}
+        />
         {getLayout(<Component {...pageProps} />)}
       </SessionProvider>
     </Provider>
