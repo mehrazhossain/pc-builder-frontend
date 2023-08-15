@@ -1,11 +1,6 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IProduct } from "../../../types";
-import { categoryTypes } from "@/utils/products";
+import { createSlice } from "@reduxjs/toolkit";
 
-interface IProductState {
-  builderProducts: IProduct[];
-}
-const initialState: IProductState = {
+const initialState = {
   builderProducts: [],
 };
 
@@ -13,11 +8,11 @@ const prodcutSlice = createSlice({
   name: "builderProducts",
   initialState,
   reducers: {
-    addBuilderProduct: (state, action: PayloadAction<IProduct>) => {
+    addBuilderProduct: (state, action) => {
       const product = action.payload;
 
       const isExist = state.builderProducts.filter(
-        (bp: IProduct) => bp._id === product._id
+        (bp) => bp._id === product._id
       );
 
       if (!isExist?.length) {
