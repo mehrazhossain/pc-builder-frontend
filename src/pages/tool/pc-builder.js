@@ -2,7 +2,6 @@ import { Button, Collapse, Row, Col } from "antd";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import { toast } from "react-toastify";
 import { DownOutlined } from "@ant-design/icons";
 import { addBuilderProduct } from "@/redux/features/products/productSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
@@ -55,8 +54,7 @@ const PCBuilder = ({ products }) => {
   };
 
   const handleCompleteBuilder = () => {
-    toast.success("PC Build successfully.");
-    // dispatch(removeBuilderProduct());
+    window.alert("PC Build successfully");
   };
 
   useEffect(() => {
