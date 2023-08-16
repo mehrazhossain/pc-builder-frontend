@@ -71,7 +71,7 @@ const HomePage = ({ products }) => {
       </Divider>
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
         {featuredCategories.map((category) => (
-          <Col className="gutter-row" xs={12} md={6} span={6}>
+          <Col key={category.id} className="gutter-row" xs={12} md={6} span={6}>
             <li className="group list-none flex items-center justify-center mb-4">
               <Link
                 href={category.url}

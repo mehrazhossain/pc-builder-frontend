@@ -1,11 +1,11 @@
 import { Button, Collapse, Row, Col } from "antd";
 import Link from "next/link";
 import React, { useEffect } from "react";
-import { useRouter } from "next/router";
 import { DownOutlined } from "@ant-design/icons";
-import { addBuilderProduct } from "@/redux/features/products/productSlice";
-import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import RootLayout from "@/components/Layouts/RootLayout";
+import { addBuilderProduct } from "@/redux/features/products/productSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
 
 let builderRequerdProducts = [
   {
@@ -42,8 +42,9 @@ let builderRequerdProducts = [
 
 const PCBuilder = ({ products }) => {
   const router = useRouter();
-  const { builderProducts } = useAppSelector((state) => state.product);
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
+
+  const { builderProducts } = useSelector((state) => state.product);
 
   const handleProductChoose = (product) => {
     if (product.type === "power-supply") {
@@ -160,7 +161,13 @@ const PCBuilder = ({ products }) => {
       {products?.length > 0 && (
         <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
           {products.map((product) => (
-            <Col className="gutter-row" xs={24} md={8} span={6}>
+            <Col
+              key={product._id}
+              className="gutter-row"
+              xs={24}
+              md={8}
+              span={6}
+            >
               <div class="flex-shrink-0 m-6 relative overflow-hidden  rounded-lg max-w-xs shadow-lg">
                 <div class="relative pt-10 px-10 flex items-center justify-center">
                   <div
