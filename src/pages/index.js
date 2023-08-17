@@ -101,6 +101,14 @@ HomePage.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps() {
+  // if (typeof window === "undefined") {
+  //   return {
+  //     props: {
+  //       products: [],
+  //     },
+  //   };
+  // }
+
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/product`);
   const data = await res.json();
 

@@ -24,6 +24,10 @@ ProductCategoryPage.getLayout = function getLayout(page) {
 };
 
 export async function getStaticPaths() {
+  // if (typeof window === "undefined") {
+  //   return { paths: [], fallback: "blocking" };
+  // }
+
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/product`);
   const products = await res.json();
   const paths = products?.data?.map((product) => ({
@@ -37,6 +41,14 @@ export async function getStaticPaths() {
 
 // SSG
 export async function getStaticProps(context) {
+  // if (typeof window === "undefined") {
+  //   return {
+  //     props: {
+  //       products: [],
+  //     },
+  //   };
+  // }
+
   const { params } = context;
 
   const res = await fetch(

@@ -4,16 +4,8 @@ import RootLayout from "@/components/Layouts/RootLayout";
 const ProductDetails = ({ product }) => {
   if (!product?._id) return <h1>Loading...</h1>;
 
-  const {
-    productName,
-    image,
-    price,
-    rating,
-    category,
-    type,
-    features,
-    description,
-  } = product;
+  const { productName, image, price, rating, category, features, description } =
+    product;
 
   return (
     <div>
@@ -65,8 +57,6 @@ const ProductDetails = ({ product }) => {
           <Button type="primary">Buy Now</Button>
         </div>
       </div>
-
-      {/* reviews  */}
     </div>
   );
 };
@@ -78,9 +68,9 @@ ProductDetails.getLayout = function getLayout(page) {
 export default ProductDetails;
 
 export async function getStaticPaths() {
-  // if (typeof window === "undefined") {
-  //   return { paths: [], fallback: "blocking" };
-  // }
+  if (typeof window === "undefined") {
+    return { paths: [], fallback: "blocking" };
+  }
 
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/product`);
   const products = await res.json();
@@ -95,6 +85,14 @@ export async function getStaticPaths() {
 
 // SSG
 export async function getStaticProps(context) {
+  // if (typeof window === "undefined") {
+  //   return {
+  //     props: {
+  //       product: [],
+  //     },
+  //   };
+  // }
+
   const { params } = context;
 
   const res = await fetch(
